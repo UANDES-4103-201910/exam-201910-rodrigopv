@@ -1,6 +1,14 @@
 <h1>New Order</h1>
 
-
+<h2>Items</h2>
+<ul>
+   <% total = 0 %>
+   <% @products.each do |product| %>
+     <% total += product['price'] %>
+     <li><%= product['model'] %> by <%= product['brand']%>. Price: <%= product['price'] %> </li>
+   <% end %>
+</ul>
+<h5>Total Price: <%= total %></h3>
 <%= render 'newform', order: @order %>
 
 <%= link_to 'Back', shopping_carts_path %>

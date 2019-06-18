@@ -15,14 +15,35 @@
     <%= form.hidden_field :user_id, :value => current_user.id %>
   </div>
 
+<h3>Addresses</h3>
+  <p>Available Billing Addresses:</p>
+  <ul>
+    <% current_user.addresses.each do |address| %>
+     <li>
+       <a href="#" onclick="changebilling(<%= address.id %>);return false;">
+       <%= address.address1 %> <br><%= address.address2 + ', ' + address.city + ', ' + address.country%></a>
+     </li>
+    <% end %>   
+  </ul>
+  <p>Available Shipping Addresses:</p>
+  <ul>
+    <% current_user.addresses.each do |address| %>
+     <li>
+       <a href="#" onclick="changeshipping(<%= address.id %>);return false;">
+       <%= address.address1 %> <br><%= address.address2 + ', ' + address.city + ', ' + address.country%></a>
+     </li>
+    <% end %>   
+  </ul>
+    
   <div class="field">
-    <%= form.label :billingaddress_id %>
-    <%= form.text_field :billingaddress_id %>
+    Selected Billing Address ID: 
+    <%= form.text_field :billingaddress_id, disabled: true %>
+    
   </div>
 
   <div class="field">
-    <%= form.label :shippingaddress_id %>
-    <%= form.text_field :shippingaddress_id %>
+    Selected Shipping Address ID: 
+    <%= form.text_field :shippingaddress_id, disabled: true %>
   </div>
 
   <div class="actions">

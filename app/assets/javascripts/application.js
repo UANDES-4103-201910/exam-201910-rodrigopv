@@ -28,3 +28,11 @@ function showbrand(brand) {
 
 }
 
+function changebilling(id) {
+  
+}
+function changeshipping(id) {
+
+}
+
+
