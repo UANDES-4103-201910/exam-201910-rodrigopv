@@ -1,0 +1,10 @@
+<% if controller_name == "home" && action_name == "index" %>
+ <h4>Available Brands</h4>
+ <ul>
+    <% @brands.each do |brand| %>
+       <a href="#" onclick="showbrand('<%= brand %>'); return false;"><li class="<%= brand %>"><%= brand %></li></a>
+    <% end %>
+       <a href="#" onclick="showbrand('Show All'); return false;"><li class="">Show all</li></a>
+	
+ </ul>
+<% end %>

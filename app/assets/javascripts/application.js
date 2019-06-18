@@ -14,3 +14,17 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+
+function showbrand(brand) {
+ if(brand == 'Show All') {
+   $('.product').show();
+   
+ } else {
+   $('.product').hide();
+   $('.' + brand).show();
+ }
+ return false;
+
+}
+

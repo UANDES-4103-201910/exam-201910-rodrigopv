@@ -1,0 +1,13 @@
+<h2>Shopping Cart - <small>Selected items</small></h2>
+<ul>
+  <% @products.each do |product| %>
+    <li><%= product['model'] %> by <%= product['brand'] %></li>
+
+  <% end %>
+</ul>
+<div class="row">
+
+ <%= link_to(new_order_path) do %>
+   <button class="btn btn-primary">Checkout Order</button>
+ <% end %>
+</div>
